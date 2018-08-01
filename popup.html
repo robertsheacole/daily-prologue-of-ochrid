@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+    <title>Daily Prologue of Ochrid</title>
+    
+    <style>
+        
+        html, body {
+            font-family: sans-serif;
+            font-size: 14px;
+            margin: 0;
+            min-height: 3000px;
+            padding: 0;
+            width: 384px;
+        }
+
+        body {
+            width: 100%;
+        }
+        
+        h1 {
+            font-family: 'Cinzel Decorative', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            margin: 0;
+            color: #cd5c5c;
+        }
+        
+        h5 {
+            text-align: center;
+            margin: 0;
+        }
+        
+        small {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+        
+        .logo {
+            text-align: center;
+            font-weight: 800;
+        }
+        
+        a:link, a:visited {
+            color: #000;
+            outline: 0;
+            text-decoration: none;
+        }
+        
+        img {
+            width: 30px;
+            padding-right: 5px;
+        }
+
+        button {
+            background-color: cadetblue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        p {
+            line-height: 1.5rem; 
+        }
+        
+        font {
+            color: cadetblue;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 0.5px solid #5c5c5c;
+            margin-top: 1rem;
+            padding-bottom: 1rem;
+            width: 100%;
+        }
+        
+        .modal-content {
+            padding: 0 22px;
+        }
+        
+        .selections {
+            display: flex;
+            align-items: baseline;
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .info {
+            font-weight: normal;
+        }
+        
+        .lds-ellipsis {
+            display: block;
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto;
+            margin-top: 1rem;
+            bottom: 50vh;
+            left: 42vw;
+        }
+        .lds-ellipsis div {
+            position: absolute;
+            top: 27px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: rgb(206, 79, 79);
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        .lds-ellipsis div:nth-child(1) {
+            left: 6px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(2) {
+            left: 6px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(3) {
+            left: 26px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(4) {
+            left: 45px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(19px, 0);
+            }
+        }
+        
+        .datePicker {
+            padding: 7px;
+        }
+        
+        .title {
+            display: flex;
+            flex-direction: column;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    
+    <div id="app">
+        <div class="modal-header">
+            <img src="images/Serbian_Orthodoxy_cross.png" alt="Serbian_Orthodoxy_cross" class="logo-icon">
+            <div class="title">
+                <h1 class="logo">
+                    Daily Prologue of Ochrid
+                </h1>
+                <h5>by St Bishop Nikolai Velimirovic</h5>
+            </div>
+        </div>
+        <small class="info"><i>According to the New Calendar</i></small>
+        <small class="today" style="text-align: center;"></small>
+        <span class="selections">
+            <input type="date" class="datePicker">
+            <button>Go to this Day</button>
+        </span>
+        
+        <div class="loader lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        
+        <div class="modal-content"></div>
+        
+    </div>
+    <script src="moment.js" type="text/javascript" defer></script>
+    <script src="popup.js" type="text/javascript" defer></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+    "name": "Daily Prologue of Ochrid",
+    "version": "2",
+    "icons": {"128": "icon_128.png"},
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    
+      
+    "permissions": ["activeTab", "http://98.131.104.126"]
+}
